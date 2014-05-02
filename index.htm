@@ -26,11 +26,13 @@
 	<header class="clearfix">
 		<div class="nav-container">
 			<h1 class="logo"><a href="index.htm">ZeroVM</a></h1>
-			<p>ZeroVM is an <strong>open&#8211;source lightweight virtualization platform</strong> based on the Chromium Native Client project.</p>
+			<!-- <p>ZeroVM is an <strong>open&#8211;source lightweight virtualization platform</strong> based on the Chromium Native Client project.</p> -->
+            <p>Hyperscale Cloud Infrastructure</p>
+            <br>
 			<a href="https://github.com/zerovm/zerovm" class="github"><img src="images/github-orange@2x.png" height="149" widht="149" alt="Fork me on GitHub" /></a>
 	        <nav id="nav-global" class="clearfix">
 	            <ul class="clearfix">
-	                <li><a href="why.htm">Why ZeroVM?</a></li><li><a href="usecase.htm">Use Cases</a></li><li><a href="architecture.htm">Architecture</a></li><li><a href="download.htm">Download</a></li>
+	                <li><a href="principles.htm">Principles</a></li><li><a href="getstarted.htm">Get Started</a></li><a href="zebra.htm">Zebra</a></li><li><a href="download.htm">Download</a></li><li><a href="http://docs.zerovm.org">Documentation</a></li>
 	            </ul>
 				<a href="#" id="pull">Menu<i class="fa fa-bars"></i></a>
 	        </nav>
@@ -42,49 +44,41 @@
 			<div class="sixteen columns">
 				
 				<div class="row">
-					<div class="four columns alpha">
-						<span class="illo speed"></span>
-						<!-- <i class="fa fa-tachometer speed"></i> -->
-					</div>
-					<div class="eleven columns omega">
-						<h2>Fast, Secure, &amp; Disposable</h2>
-						<p>Each request to a ZeroVM App, or zapp, results in the spawning of an independent instance. Each instance is isolated and secure, spinning up in under 5 milliseconds, and is destroyed after finishing the request. The speed of ZeroVM comes from each instance virtualizing only what is required to run a single process.</p>
+					<div class="sixteen columns">
+						<h2>What is ZeroVM?</h2>
+						<p>ZeroVM is an open source, virtualization technology that is based on the Chromium Native Client (NaCl) project. ZeroVM creates a secure and isolated execution enviornment which can run a single thread or application. ZeroVM is designed to be lightweight, portable, and can easily be embedded inside of existing storage systems. This functionality allows developers to push their application to their data instead of having to pull their data to their application as is the case with more traditional architectures.</p>
 					</div>
 				</div>
 				<hr />
 				
 				<div class="row">
-					<div class="four columns alpha">
-						<span class="illo compute"></span>
-						<!-- <i class="fa fa-cogs computing"></i> -->
+                     <div class="three columns aplha"> <p> </p> </div>
+                     <div class="five columns ">
+						<center><a href="getstarted.htm"><span class="illo compute"></span></a>
+                        <h3>Get Started</h3></center>
 					</div>
-					<div class="eleven columns omega">
-						<h2>Data Local Computing</h2>
-						<p>ZeroVM allows you to bring the hypervisor to your data. With a fully executable size at just under 75kb the ZeroVM hypervisor is lightweight and portable. The small size allows ZeroVM to be embedded directly within your existing storage system, closing the loop between compute and data in the ETL lifecycle.</p>
-					</div>
+                    <div class="five columns">
+                        <center><a href="download.htm"><span class="illo download"></span></a>
+                        <h3>Download Now</h3></center>
+                    </div>
+                    <div class="three columns omega"> <p> </p> </div>
 				</div>
 				<hr />
-				
-				<div class="row">
-					<div class="four columns alpha">
-						<span class="illo openstack"></span>
-					</div>
-					<div class="eleven columns omega">
-						<h2>OpenStack</h2>
-						<p>ZeroVM has been integrated into OpenStack Swift in a project code named Zwift. The Zwift project consists of a job manager to install on the proxy layer and a daemon to install at the cluster level. Zwift enables the serving of dynamic applications directly from a Swift cluster.</p>
-					</div>
+                
+                <div class="row">
+					<div class="sixteen columns">
+						<h2>More Details</h2>
+                        <p>While ZeroVM itself provides only raw execution environment, the ZeroVM Run Time (ZRT) includes a port of glibc and an in memory filesytem providing a C99 compliant environment supporting most of the POSIX syscall API. ZeroVM doesn't expose any non C99 or non POSIX API. All ZeroVM magic is handled transparently to the application. In best POSIX/UNIX traditions all IO to and from ZeroVM is modeled as files. Input data is presented to application as STDIN, log as STDERR and output as STDOUT. Communication channels with peer ZeroVM instances are also presented as files. The rest of the visible file&#8211;system is all transient and memory&#8211;backed in current implementation. Standard C99 library and major part of POSIX is available, however, there are some behavioral deviations from what would be expected as "normal" implementation. For example, since ZeroVM is deterministic, time functions always return zero. We assume it is within C99 standard. It could be interpreted by the application as if it is running on an infinitely fast computer. Threading is cooperative (handled automatically) and deterministic, hence all thread synchronization primitives are just no&#8211;ops. Developing for ZeroVM requires using the provided cross&#8211;compilation GNU toolchain.</p>
+                    </div>
 				</div>
 				<hr />
-				
+                
 				<div class="row">
-					<div class="four columns alpha">
-						<span class="illo download"></span>
-						<!-- <i class="fa fa-download download"></i> -->
+                    <div class="eight columns alpha">
+						<center><p><a href="http://docs.zerovm.org">Detailed ZeroVM Documentation</a></p></center>
 					</div>
-					<div class="eleven columns omega">
-						<h2>Download ZeroVM</h2>
-						<p>ZeroVM is <a href="download.htm">free to download</a>, use, and extend. Browse our Git repository to find source code, command-line utilities, and run-time libraries. Plenty of sample code and examples for porting your project to ZeroVM are available as well. Want to give back to the project, great! Contact us and and tell us about your pull request.</p>
-						<p><a href="https://github.com/zerovm"><i class="fa fa-github-alt"></i>Learn more at GitHub</a></p>
+					<div class="eight columns omega">
+						<center><p><a href="https://github.com/zerovm/zerovm"><i class="fa fa-github-alt"></i>Learn more at GitHub</a></p></center>
 					</div>
 				</div>
 							
