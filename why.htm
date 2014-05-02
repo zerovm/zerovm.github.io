@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<title>ZeroVM sponsored by Rackspace</title>
+	<link rel="stylesheet" href="includes/css/main.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	
+	<script src="includes/js/jquery-1.10.2.min.js"></script>
+	<script src="includes/js/plugins/waypoints.min.js"></script>
+	<script src="includes/js/plugins/waypoints-sticky.min.js"></script>
+	<script src="includes/js/main.js"></script>
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	
+	<header class="clearfix sub-page">
+		<div class="nav-container">
+			<h1 class="logo"><a href="index.htm">ZeroVM</a></h1>
+			<a href="https://github.com/zerovm/zerovm" class="github"><img src="images/github-orange@2x.png" height="149" widht="149" alt="Fork me on GitHub" /></a>
+	        <nav id="nav-global" class="clearfix">
+	            <ul class="clearfix">
+	                <li><a href="why.htm" class="active">Why ZeroVM?</a></li><li><a href="usecase.htm">Use Cases</a></li><li><a href="architecture.htm">Architecture</a></li><li><a href="download.htm">Download</a></li>
+	            </ul>
+				<a href="#" id="pull">Menu<i class="fa fa-bars"></i></a>
+	        </nav>
+		</div>
+	</header>
+	
+	<article>
+		<section class="container">
+			<div class="sixteen columns">
+				<div class="row">
+					<h2>Why ZeroVM?</h2>
+					<p>How cloud&#8211;friendly is traditional virtualization? As a matter of fact, all traditional virtualization technologies predate the cloud era. Traditional virtualization techniques have one major advantage: they are backwards compatible at the binary level, making it easy to run any existing pre&#8211;cloud application on the cloud. But what if backward compatibility is not a requirement? What about new, cloud&#8211;native applications? Is traditional virtualization still a good platform for them?</p>
+					<hr />
+					
+					<h3>Verbose Abstraction</h3>
+					<p>VM abstraction is too low&#8211;level for a compute cloud; it requires a full OS, bulking up the VM instance, not to mention OS maintenance. Does the user really need to manage that emulated virtual interrupt controller on every VM instance in his compute cloud? The same is true for every software&#8211;visible artifact of the emulated hardware. And how many different computation abstractions does the developer really need? Thread? Process? VM Instance? VM Instance Group? Could this hierarchy be radically simplified with just one abstraction? Could POSIX process abstraction be a candidate here?</p>
+
+					<h3>Compromised Security</h3>
+					<p>With traditional virtualization it is unavoidable to reuse the VM between web requests and among different trust domains. This means that an XaaS application running inside a traditional VM is reused for serving customers associated with different accounts. The VM could easily become contaminated with the data of one customer and this data could become fully accessible to the next customer. Disposable VMs solve this problem by making VMs low&#8211;cost so they are not reused between web-requests.</p>
+					
+					<!-- <h3>Traditional virtualization passes the multitenancy burden on to the application developer</h3> -->
+					<h3>Reduces Multitenancy Burden</h3>
+					<p>As another consequence of VM reuse &#8212; all responsibility of data security is placed on the shoulders of the developer. Traditional virtualization only shields the operator from its customers' code. Customer data privacy is all at the mercy of the SaaS/PaaS developer. Disposable VMs solve this problem by enabling the developer not to worry about multitenancy and focus on the functionality of his application by building a single-tenant application. ZeroVM later takes that single&#8211;tenant application and instantiates a separate copy of it for each tenant.</p>
+
+					<h3>Storage &#8212; Computing Separation</h3>
+					<p>Bulky VM instances cannot be integrated into a storage cloud. They require a dedicated cloud, resulting in excessive back and forth shipping of data. This problem is exacerbated by data&#8211;intensive workloads such as crunching logs and processing videos. VM embeddability and lightweightness solve this problem.</p>
+					
+					<h3>VM Instance Transiency</h3>
+					<p>Traditional virtualization makes it impossible to recover from instance failure, causing permanent loss of user data and making the whole VM instance concept transient. The user is required to introduce redundancy himself into his computation. This fact undermines the whole cloud-computing concept which is the elimination of infrastructure housekeeping worries and allowing the developer to focus on his problem domain logic. VM Determinism solves this problem with the concept of a "perpetual VM", transactionality at the VM level, transparent recovery and automatic retries.</p>
+					
+					<h3>Limited Elasticity</h3>
+					<p>Bulky traditional VM instances need a minute&#8211;long provisioning time. Hence, metering by the hour becomes the de facto standard. However, the internet operates in terms of sub&#8211;second web requests, not hourly batch jobs. Fine&#8211;grained metering could potentially revolutionize cloud computing. Enormous computing resources would be available on tap for instant&#8211;long rentals. Renting compute resources per web request would become practical. Terabyte&#8211;sized datasets could be processed instantly. Long&#8211;tail, low&#8211;usage web applications would become practical and economically feasible. VM lightweightness solves this problem by enabling compute rental by the millisecond.</p>
+					
+					<h3>What about LXC? Could it be a solution?</h3>
+					<p>Not in its current state, at least. It is still not secure enough for multitenancy: host syscalls are vulnerable - at least as a DoS attack target, the underlying network is fully exposed for any rogue packets to be sent, etc... So an inner sandbox is universally required in LXC. Even if LXC were secure, the abstraction is still too verbose for pure compute clouds. The full OS syscall API is visible to the application, making it sensitive to the exact kernel revision for example. So, at least half of the above problems remain unsolved with LXC and even worse a security problem is introduced, limiting adoption of the lightweight virtualization concept as a whole.</p>
+				</div>
+			</div>
+		</section>
+	</article>
+	
+	<footer>
+		<section class="container">
+			<div class="sixteen columns">
+				<div class="row">
+					<div class="five columns alpha">
+						<i class="fa fa-envelope-o"></i>
+						<h5>Contact Us</h5>
+						<p><a href="">info@zerovm.org</a></p>
+					</div>
+					<div class="five columns">
+						<i class="fa fa-link"></i>
+						<h5>Cool Links</h5>
+						<ul>
+							<li><a href="http://code.google.com/p/nativeclient/">GoogleNaCL</a></li>
+							<li><a href="https://github.com/zerovm/zerovm">Github</a></li>
+						</ul>
+					</div>
+					<div class="five columns omega">
+						<i class="fa fa-cloud"></i>
+						<h5>ZeroVM is</h5>
+						<p>sponsored by <a href="http://www.rackspace.com">Rackspace</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+	
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<title>ZeroVM sponsored by Rackspace</title>
+	<link rel="stylesheet" href="includes/css/main.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	
+	<script src="includes/js/jquery-1.10.2.min.js"></script>
+	<script src="includes/js/plugins/waypoints.min.js"></script>
+	<script src="includes/js/plugins/waypoints-sticky.min.js"></script>
+	<script src="includes/js/main.js"></script>
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	
+	<header class="clearfix sub-page">
+		<div class="nav-container">
+			<h1 class="logo"><a href="index.htm">ZeroVM</a></h1>
+			<a href="https://github.com/zerovm/zerovm" class="github"><img src="images/github-orange@2x.png" height="149" widht="149" alt="Fork me on GitHub" /></a>
+	        <nav id="nav-global" class="clearfix">
+	            <ul class="clearfix">
+	                <li><a href="why.htm">Why ZeroVM?</a></li><li><a href="usecase.htm" class="active">Use Cases</a></li><li><a href="architecture.htm">Architecture</a></li><li><a href="download.htm">Download</a></li>
+	            </ul>
+				<a href="#" id="pull">Menu<i class="fa fa-bars"></i></a>
+	        </nav>
+		</div>
+	</header>
+	
+	<article>
+		<section class="container">
+			<div class="sixteen columns">
+				<div class="row">
+					<h2>Use Cases</h2>
+					<h3>Multi&#8211;tenant Cloud Database</h3>
+					<p>Well, it all started from an attempt to create a truly multi&#8211;tenant cloud database, more accurately a query&#8211;system we nicknamed OpenDremel &#8212; a clone of Google BigQuery/Dremel and now merged into Apache Drill. In the age of "schemaless" and "unstructured" the query is nothing more than a piece of arbitrary imperative code. That code had better be low&#8211;level and highly optimized, so that it can provide the throughput levels required for datasets in which information per bit is extremely low &#8212; a.k.a Big Data. In such scenarios, security becomes an immediate concern. After a long search we could not find a suitable security solution. Most sandboxing and virtualization technologies are either insecure or too bulky to run in&#8211;storage. Without such technology, how else we could guarantee that untrusted queries don't go wild at the storage back&#8211;end? The sandbox for OpenDremel queries gradually became a separate ZeroVM project. We believe that it is a prerequisite for a truly multi&#8211;tenant cloud database. Making a long story short: A true multi&#8211;tenant cloud DBMS, not unlike BigQuery, would be a perfect killer application for ZeroVM &amp; ZeroVM&#8211;for&#8211;Swift.</p>
+					
+					<h3>Making Hadoop Fly in Clouds</h3>
+					<p>Another example would be a predicate&#8211;pushdown optimization for Hadoop and especially Cloudera Impala and/or interactive versions of Hive. In fact any other data&#8211;crunching framework such as Spark would greatly benefit from predicate&#8211;pushdown optimization in cloud environments where storage cloud is physically separated from compute cloud. It is well known that Hadoop is used to crunch enormous datasets; what is less known is that when deployed in a cloud, Hadoop cannot access that enormous dataset locally, due to security restrictions; therefore, it is screamingly inefficient compared to on&#8211;premise Hadoop deployments. ZeroVM could fix the problem here. ZeroVM is so lightweight that it could be entirely embedded into cloud&#8211;storage systems like Amazon S3 and Rackspace CloudFiles and OpenStack Swift. In fact, we already embedded it into OpenStack Swift. Then Hadoop could detect smarter cloud storage systems and enable predicate&#8211;pushdown optimization for them, making Hadoop friendlier for the cloud or should I say, making the cloud friendlier for Hadoop.</p>
+					
+					<h3>Grepping S3/CloudFiles</h3>
+					<p>Yet another class of killer applications would be a cloud&#8211;storage search/scan feature. With current cloud storage, searching or scanning data within cloud storage is challenging to say the least. A simple search functionality requires renting an additional compute cluster which would then scan and index whole data corpus periodically. This scan/indexing will require a full cost of pulling all the data out of storage&#8211;cloud. On contrast, ZeroVM could enable a low-cost interactive search and scan functionality by placing processing closer to data, right into the storage cluster.</p>
+					
+					<h3>In&#8211;situ Cloud&#8211;enabled MapReduce</h3>
+					<p>Lightweight, low&#8211;cost MapReduce framework which is embedded directly into cloud&#8211;storage could be yet another killer&#8211;app for ZeroVM. Think about crunching your dataset instantly by renting aggregate computing capacity of thousands of servers, with your dataset already pre&#8211;loaded in there. 5TB of data stored in S3 would be scattered usually over about 1000 of servers. The resources required to scan all the corpus instantly using local scan could be significantly less than the resources required to stream all the corpus out for external scanning.</p>
+					
+					<h3>Monetizing Datasets</h3>
+					<p>A less&#8211;ambitious killer&#8211;application could be a REST web&#8211;service framework for data&#8211;owners. Any data&#8211;owner who is willing to monetize his/her data could benefit from the capability to provide low&#8211;cost free&#8211;form interactive querying functionality for the dataset. Currently there is no safe way for a data owner to provide arbitrary querying of his/her premium data. Monetization options are limited to either naive putting raw data for download or providing just limited number of canned reports.</p>
+
+					<h3>Video Sharing</h3>
+					<p>As a non-query related, killer-app example, consider a video sharing service. Vanilla cloud-storage like Amazon S3 could be used as a solid and low-cost video-sharing platform. However, it becomes challenging to embed video handling logic on top of S3/CloudFiles and it always ends-up with a separate rendering farm on every edge location. With ZeroVM it is straightforward to develop a complete low-cost video-sharing service out of ordinary cloud-storage without the need of separate rendering farms. It could be so simple and inexpensive, that everyone can afford to make their own private-video-sharing network right out of his/her video library stored in the cloud.
+					</p>
+				</div>
+			</div>
+		</section>
+	</article>
+	
+	<footer>
+		<section class="container">
+			<div class="sixteen columns">
+				<div class="row">
+					<div class="five columns alpha">
+						<i class="fa fa-envelope-o"></i>
+						<h5>Contact Us</h5>
+						<p><a href="">info@zerovm.org</a></p>
+					</div>
+					<div class="five columns">
+						<i class="fa fa-link"></i>
+						<h5>Cool Links</h5>
+						<ul>
+							<li><a href="http://code.google.com/p/nativeclient/">GoogleNaCL</a></li>
+							<li><a href="https://github.com/zerovm/zerovm">Github</a></li>
+						</ul>
+					</div>
+					<div class="five columns omega">
+						<i class="fa fa-cloud"></i>
+						<h5>ZeroVM is</h5>
+						<p>sponsored by <a href="http://www.rackspace.com">Rackspace</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+	
+	</body>
+</html>

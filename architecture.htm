@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<title>ZeroVM sponsored by Rackspace</title>
+	<link rel="stylesheet" href="includes/css/main.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	
+	<script src="includes/js/jquery-1.10.2.min.js"></script>
+	<script src="includes/js/plugins/waypoints.min.js"></script>
+	<script src="includes/js/plugins/waypoints-sticky.min.js"></script>
+	<script src="includes/js/main.js"></script>
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	
+	<header class="clearfix sub-page">
+		<div class="nav-container">
+			<h1 class="logo"><a href="index.htm">ZeroVM</a></h1>
+			<a href="https://github.com/zerovm/zerovm" class="github"><img src="http://4e5173459aacd70f80b1-cb3c56eadfa06a9e674a9d19fe34dff0.r88.cf1.rackcdn.com/images/github-orange@2x.png" height="149" widht="149" alt="Fork me on GitHub" /></a>
+	        <nav id="nav-global" class="clearfix">
+	            <ul class="clearfix">
+	                <li><a href="why.htm">Why ZeroVM?</a></li><li><a href="usecase.htm">Use Cases</a></li><li><a href="architecture.htm" class="active">Architecture</a></li><li><a href="download.htm">Download</a></li>
+	            </ul>
+				<a href="#" id="pull">Menu<i class="fa fa-bars"></i></a>
+	        </nav>
+		</div>
+	</header>
+	
+	<article>
+		<section class="container">
+			<div class="sixteen columns">
+				<div class="row">
+					<h2>Architecture</h2>
+					
+					<h3>Abstraction Level</h3>
+					<p>ZeroVM abstraction is a C99 compliant environment with certain parts of POSIX syscall API implemented.  ZeroVM doesn't expose any non C99 or non POSIX API. All ZeroVM magic is handled transparently to the application. In best POSIX/UNIX traditions all IO to and from ZeroVM is modeled as files. Input data is presented to application as STDIN, log as STDERR and output as STDOUT. Communication channels with peer ZeroVM instances are also presented as files. The rest of the visible file&#8211;system is all transient and memory&#8211;backed in current implementation. Standard C99 library and major part of POSIX is available, however, there are some behavioral deviations from what would be expected as "normal" implementation. For example, since ZeroVM is deterministic, time functions always return zero. We assume it is within C99 standard. It could be interpreted by the application as if it is running on an infinitely fast computer. Threading is cooperative (handled automatically) and deterministic, hence all thread synchronization primitives are just no&#8211;ops. Developing for ZeroVM requires using the provided cross&#8211;compilation GNU toolchain.</p>
+					
+					<h3>Secure Isolation</h3>
+					<p>ZeroVM uses Chromium NaCl project as secure sandboxing technology. NaCl is widely accepted as being a serious secure isolation technology. It is based on SFI techniques that isolate untrusted code from host system and there are a number of Google research papers published on the matter. We do our best to timely keep all security&#8211;related code in&#8211;sync with most&#8211;recent Chromium releases. ZeroVM isolation is as secure as the Chrome Browser Native Client feature. In addition to NaCl, there are a few more layers of security (a.k.a. "defense&#8211;in&#8211;depth"). One, is strict determinism which is by itself, assuming no bugs, an impenetrable line. Then, ZeroVM severs its privileges to the minimum before transferring control to the application. We could go as far as using SECCOMP for non&#8211;networking mode. For networking mode, we use cgroup/lxc as another layer of security.</p>
+					
+					<h3>Determinism</h3>
+					<p>Functional programming with C99 and even native assembly? Can you believe it? We achieve it by compiling C99 into "deterministic subset" of target ISA. Currently, it works only with x86&#8211;64 and ARM. Conceptually, it could be implemented for any ISA, including synthetic ones like LLVM and even JVM. Challenges arise with some parts of C99 which require "unsafe" functionality, such as time functions. When faced with such challenges we strive to find creative and elegant solutions without breaking C99 compliance. Aside from implementation details, let's ask why we need determinism in the first place? Developer productivity improvements are well documented. However, it is not the real reason for determinism in ZeroVM. Determinism enables ZeroVM to provide an easy and fully automatic error&#8211;recovery and failover, allows it to easily hop the VM from server to server and even enables ACID transactional semantics on the VM level. Without determinism, it is challenging to cleanly separate infrastructure housekeeping from application functionality itself.</p>
+					
+					<h3>Threading Modeled</h3>
+					<p>ZeroVM itself is a single&#8211;threaded application. However, ZeroVM implements full POSIX pthreads library (currently in alpha). The implementation is exclusively based on cooperative&#8211;multitasking concept. Yielding is handled automatically when ZeroVM is called by application through the provided syscalls. To support determinism, an application is never preemptively intercepted (except when it violates security constraints or resource usage caps). It can also be considered as a form of co&#8211;routines just on the VM POSIX level and not on the language level.</p>
+					
+					<h3>Clustering</h3>
+					<p>ZeroVM itself is single&#8211;threaded and there is only one way to to achieve parallelism &#8212; ZeroVM clustering. It is inspired by CSP and its better&#8211;known brother actor model, It also resembles good old UNIX/POSIX processes models. All IO, including networking, is represented as files. The easiest way to understand ZeroVM clustering is to think of it as UNIX Pipelines on steroids. The ZeroVM clustering model is richer and can include advanced communication patterns such as req&#8211;rep, pub&#8211;sub and etc&#8230; It can also be thought of in "Erlang&#8211;in&#8211;C" terms. ZeroVM clustering is currently backed underneath by ZeroMQ. ZeroVM networking traffic is fully isolated from host traffic by lightweight envelopes. This prevents untrusted applications from accessing the host and other nodes within the host network. This is a low&#8211;cost approach to overlayed networks. Underlying transport that backs up pipes is fully pluggable and transparent to the application. The clustering feature is designed to be efficient for the full range of parallelism granularity, starting from many&#8211;core parallelism and ending with multi&#8211;datacenter parallelism.</p>
+				</div>
+			</div>
+		</section>
+	</article>
+	
+	<footer>
+		<section class="container">
+			<div class="sixteen columns">
+				<div class="row">
+					<div class="five columns alpha">
+						<i class="fa fa-envelope-o"></i>
+						<h5>Contact Us</h5>
+						<p><a href="">info@zerovm.org</a></p>
+					</div>
+					<div class="five columns">
+						<i class="fa fa-link"></i>
+						<h5>Cool Links</h5>
+						<ul>
+							<li><a href="http://code.google.com/p/nativeclient/">GoogleNaCL</a></li>
+							<li><a href="https://github.com/zerovm/zerovm">Github</a></li>
+						</ul>
+					</div>
+					<div class="five columns omega">
+						<i class="fa fa-cloud"></i>
+						<h5>ZeroVM is</h5>
+						<p>sponsored by <a href="http://www.rackspace.com">Rackspace</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+	
+	</body>
+</html>
