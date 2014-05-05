@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>ZeroVM sponsored by Rackspace</title>
+	<link rel="stylesheet" href="includes/css/main.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+	<script src="includes/js/jquery-1.10.2.min.js"></script>
+	<script src="includes/js/plugins/waypoints.min.js"></script>
+	<script src="includes/js/plugins/waypoints-sticky.min.js"></script>
+	<script src="includes/js/main.js"></script>
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<header class="clearfix sub-page">
+		<div class="nav-container">
+			<h1 class="logo"><a href="index.htm">ZeroVM</a></h1>
+			<a href="https://github.com/zerovm/" class="github"><img src="images/github-orange@2x.png" height="149" widht="149" alt="Fork me on GitHub" /></a>
+	        <nav id="nav-global" class="clearfix">
+	            <ul class="clearfix">
+	                <li><a href="principles.htm">Principles</a></li><li><a href="getstarted.htm">Get Started</a></li><a href="zebra.htm">Zebra</a></li><li><a href="download.htm" class='active'>Download</a></li><li><a href="http://docs.zerovm.org">Documentation</a></li>
+	            </ul>
+				<a href="#" id="pull">Menu<i class="fa fa-bars"></i></a>
+	        </nav>
+		</div>
+	</header>
+
+	<article>
+		<section class="container">
+			<div class="sixteen columns">
+				<div class="row">
+					<h2>Download ZeroVM</h2>
+                    <p>ZeroVM is free to download, use, and extend. Browse our <a href="https://github.com/zerovm/">Git</a> repositories to find source code, command-line utilities, and run-time libraries. Plenty of sample code and examples for porting your project to ZeroVM are available as well. Want to give back to the project, great! Contact us and and tell us about your pull request.</p>
+                    <hr />
+                    
+					<h3>Installation</h3>
+					<p>Binary packages are for Ubuntu 12.04 LTS only.</p>
+					<hr />
+
+					<h4>Install apt-get repository:</h4>
+					<p>Add a new source to <strong>sources.list</strong>:</p>
+					<p><code>sudo su -c 'echo "deb http://packages.zerovm.org/apt/ubuntu/ precise main" > /etc/apt/sources.list.d/zerovm-precise.list'</code></p>
+					<p>Install zerovm GPG key:</p>
+					<p><code>wget -O- http://packages.zerovm.org/apt/ubuntu/zerovm.pkg.key | sudo apt-key add -</code></p>
+					<p>Update packages:</p>
+					<p><code>sudo apt-get update</code></p>
+					<hr />
+
+					<h4>Install binary files and utils</h4>
+					<p>Install ZeroVM packages:</p>
+					<p><code>sudo apt-get install zerovm</code></p>
+					<p>Install ZeroVM command-line shell:</p>
+					<p><code>sudo apt-get install zerovm-cli</code></p>
+					<hr />
+
+					<h4>Run some binaries</h4>
+					<p>Python 2.7</p>
+					<p><code>wget http://packages.zerovm.org/zerovm-samples/python.tar</code></p>
+					<p><code>echo 'print "Hello"' > hello.py</code></p>
+					<p><code>zvsh --zvm-image python.tar python @hello.py</code></p>
+					<!--
+					<p>Busybox</p>
+					<p><code>wget http://packages.zerovm.org/apt/ubuntu/samples/busybox</code></p>
+					<p><code>zvsh busybox ls -al /dev</code></p>
+					<p>PCRE grep</p>
+					<p><code>wget http://packages.zerovm.org/apt/ubuntu/samples/pcregrep</code></p>
+					<p><code>echo "a test" | zvsh pcregrep --color=always -i test</code></p>
+					-->
+					<hr />
+
+					<h4>Install development tools</h4>
+					<p>Install ZeroVM debug/development tools:</p>
+					<!-- <p><code>sudo apt-get install zerovm-dbg</code></p> -->
+					 <p><code>sudo apt-get install zerovm-dev</code></p>
+					<p>Install ZeroVM GCC toolchain:</p>
+					<p><code>sudo apt-get install gcc-4.4.3-zerovm</code></p>
+					<p>Install some build tools:</p>
+					<p><code>sudo apt-get install make automake autoconf git</code></p>
+					<!--
+					<p>Install ZeroVM debugger (not for the faint of heart):</p>
+					<p><code>sudo apt-get install gdb-zerovm</code></p>
+					-->
+					<p>Now you can build some sample programs:</p>
+					<p><code>git clone https://github.com/zerovm/zerovm-samples</code></p>
+					<p><code>cd zerovm-samples</code></p>
+					<p><code>make</code></p>
+
+					<p>Or you can see how to port some existing software to ZeroVM:</p>
+					<p><code>git clone https://github.com/zerovm/zerovm-ports</code></p>
+					<p><code>cd zlib</code></p>
+					<p><code>cat README.md</code></p>
+					<hr />
+
+					<h3>GitHub Links</h3>
+					<ul>
+						<li><a href="https://github.com/zerovm/zerovm"><i class="fa fa-github-alt"></i>Source code</a></li>
+						<li><a href="https://github.com/zerovm/zerovm-cli"><i class="fa fa-github-alt"></i>Command&#8211;line tools</a></li>
+						<li><a href="https://github.com/zerovm/zrt"><i class="fa fa-github-alt"></i>Run&#8211;time library</a></li>
+						<li><a href="https://github.com/zerovm/toolchain"><i class="fa fa-github-alt"></i>GCC toolchain</a> (Installation: <a href="https://github.com/zerovm/toolchain/blob/master/README.md">README.md</a>)</li>
+						<li><a href="https://github.com/zerovm/zerovm-samples"><i class="fa fa-github-alt"></i>Sample code &amp; libraries</a></li>
+						<li><a href="https://github.com/zerovm/zerovm-ports"><i class="fa fa-github-alt"></i>Sample software &amp; libraries ported to ZeroVM </a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</article>
+
+	<footer>
+		<section class="container">
+			<div class="sixteen columns">
+				<div class="row">
+					<div class="five columns alpha">
+						<i class="fa fa-envelope-o"></i>
+						<h5>Contact Us</h5>
+						<p><a href="">info@zerovm.org</a></p>
+					</div>
+					<div class="five columns">
+						<i class="fa fa-link"></i>
+						<h5>Cool Links</h5>
+						<ul>
+							<li><a href="http://code.google.com/p/nativeclient/">GoogleNaCL</a></li>
+							<li><a href="https://github.com/zerovm/zerovm">Github</a></li>
+						</ul>
+					</div>
+					<div class="five columns omega">
+						<i class="fa fa-cloud"></i>
+						<h5>ZeroVM is</h5>
+						<p>sponsored by <a href="http://www.rackspace.com">Rackspace</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+
+	</body>
+</html>
