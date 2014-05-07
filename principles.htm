@@ -41,31 +41,76 @@
 			<div class="sixteen columns">
 				<div class="row">
 					<h2>The Principles Behind ZeroVM</h2>
-                    <p>The following principles are what set ZeroVM apart from other technologies and projects, these are also the design tenants that inspired the creation of ZeroVM. Use cases that require or emphasize several of these principles will most likely be good a fit for the ZeroVM technology.</p>
-                    
+                    <p>
+ZeroVM was founded on some key design tenets, which sets it apart from other
+technologies. Use cases that require or emphasize several of these principles
+will most likely be a good application of the ZeroVM technology.
+</p>
+
 					<h3>Secure</h3>
-                    <p>ZeroVM provides a completely secure and isolated execution environment. The security is derived from the Chromium Native Client (NaCl) project and is based on the concept of software fault isolation. ZeroVM creates a secure sandbox and validates all code that is executed inside the sandbox, ensuring a program will not accidentaly or malicously break out. This level of security allows for the execution of arbitrary user code even in untrusted multi&#8211;tenant environments like public cloud storage services. Find out more about about Native Client on the <a href="https://code.google.com/p/nativeclient/">NaCl project website</a> and in the <a href="http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/pubs/archive/34913.pdf">original NaCl white paper</a>.</p>
-					
+                    <p>ZeroVM provides a completely secure and isolated
+execution environment. The security is derived from the Chromium Native Client
+(NaCl) project and is based on the concept of software fault isolation. ZeroVM
+creates a secure sandbox and validates all code that is executed inside the
+sandbox, ensuring a program will not accidentaly or malicously break out. This
+level of security allows for the execution of arbitrary user code even in
+untrusted multi-tenant environments like public cloud storage services.
+Find out more about about Native Client on the
+<a href="https://code.google.com/p/nativeclient/">NaCl project website</a> and
+in the
+<a href="http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/pubs/archive/34913.pdf">
+original NaCl white paper</a>.</p>
+
 					<h3>Fast</h3>
-					<p>ZeroVM is extremely lightweight and fast. An execution environment can start in as little as 5 milliseconds. By eliminating the operating system and only providing enough functionality to run simple applications ZeroVM allows the creation of new execution environments for each user/request.</p>
-                    
+                    <p>ZeroVM is extremely lightweight and fast. An execution
+environment can start in as little as 5 milliseconds. By eliminating the
+operating system and only providing enough functionality to run simple
+applications, ZeroVM allows the creation of new execution environments for each
+user/request.</p>
+
 					<h3>Performant</h3>
-					<p>Traditional hypervisors create ongoing overhead by inserting themselves between the virtual machine and the hardware. ZeroVM can pre-validate executables resulting in little to no overhead at runtime.  ZeroVM also makes it easy to create large clusters of instances aggregating the compute power of many individual physical servers into a single execution environment.</p>
-					
+                    <p>Traditional hypervisors create ongoing overhead by
+inserting themselves between the virtual machine and the hardware. ZeroVM can
+pre-validate executables resulting in little to no overhead at runtime. ZeroVM
+also makes it easy to create large clusters of instances, aggregating the
+compute power of many individual physical servers into a single execution
+environment.</p>
+
 					<h3>Disposable</h3>
-					<p>ZeroVM execution environments are designed to be short lived so each new request can start with a fresh environment. This provides enhanced security and elimiates variability that can make it difficult to diagnose or recreate bugs. This also eliminates the need for application developers to think about multi-tenancy, each user can run their own copy of an applicaiton in their own execution environment.</p>
-                    
+                    <p>ZeroVM execution environments are designed to be short
+lived so each new request can start with a fresh environment. This provides
+enhanced security and elimiates variability that can make it difficult to
+diagnose or recreate bugs. This also eliminates the need for application
+developers to think about multi-tenancy, because each user can run their own
+copy of an applicaiton in a separate sanboxed execution environment.</p>
+
 					<h3>Embeddable</h3>
-					<p>ZeroVM is designed to be embedded into existing systems. By embedding ZeroVM in an existing storage system you can push your applicaiton to your data instead of having to pull your data to your applicaiton. ZeroVM can provide functionality equivalent to stored procedures for a variety of different storage systems. The ZeroVM team has already created middleware making it very easy to embedd ZeroVM inside of an OpenStack&reg; Swift cluster.</p>
-                    
+                    <p>ZeroVM is designed to be embedded into existing systems.
+By embedding ZeroVM inside an existing storage system, for example, you can
+push your applicaiton to your data and run computations <i>in situ</i>, rather than
+paying the latency cost of piping data from storage to compute nodes. This can
+provide functionality equivalent to stored procedures for a variety of
+different storage systems.
+
+An example of this capability is<a href="https://github.com/zerovm/zerocloud">
+ZeroCloud</a>, a middleware application for OpenStack Swift&reg; which embeds
+ZeroVM on storage nodes and enables arbitrary in-place computation on
+collections of objects.
+</p>
+
                     <h3>Deterministic</h3>
-					<p>Execution inside a ZeroVM environment is deterministic, meaning that for any given set of inputs ZeroVM will always produce the exact same output.  This makes it possible to run multiple copies of an operation in parallel ensuring you will see the exact same result in each location.  It also allows you to stop and start execution and even replay operations without impacting the output.</p>
-                
+                    <p>Execution inside a ZeroVM environment is deterministic,
+meaning that for any given set of inputs ZeroVM will always produce the exact
+same output. This makes it possible to run multiple copies of an operation in
+parallel ensuring you will get the exact same result from each copy.  It also
+allows you to stop and start execution and even replay operations without
+impacting the output.</p>
+
 				</div>
 			</div>
 		</section>
 	</article>
-	
+
 	<footer>
 		<section class="container">
 			<div class="sixteen columns">
