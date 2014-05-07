@@ -50,56 +50,72 @@
 
 					<h4>Install apt-get repository:</h4>
 					<p>Add a new source to <strong>sources.list</strong>:</p>
-					<p><code>sudo su -c 'echo "deb http://packages.zerovm.org/apt/ubuntu/ precise main" > /etc/apt/sources.list.d/zerovm-precise.list'</code></p>
+					<pre>
+                                          sudo su -c 'echo "deb http://packages.zerovm.org/apt/ubuntu/ precise main" > /etc/apt/sources.list.d/zerovm-precise.list'
+                                        </pre>
 					<p>Install zerovm GPG key:</p>
-					<p><code>wget -O- http://packages.zerovm.org/apt/ubuntu/zerovm.pkg.key | sudo apt-key add -</code></p>
+					<pre>
+                                          wget -O- http://packages.zerovm.org/apt/ubuntu/zerovm.pkg.key | sudo apt-key add -
+                                        </pre>
 					<p>Update packages:</p>
-					<p><code>sudo apt-get update</code></p>
+					<pre>
+                                          sudo apt-get update
+                                        </pre>
 					<hr />
 
 					<h4>Install binary files and utils</h4>
 					<p>Install ZeroVM packages:</p>
-					<p><code>sudo apt-get install zerovm</code></p>
+					<pre>sudo apt-get install zerovm</pre>
 					<p>Install ZeroVM command-line shell:</p>
-					<p><code>sudo apt-get install zerovm-cli</code></p>
+					<pre>sudo apt-get install zerovm-cli</pre>
 					<hr />
 
 					<h4>Run some binaries</h4>
 					<p>Python 2.7</p>
-					<p><code>wget http://packages.zerovm.org/zerovm-samples/python.tar</code></p>
-					<p><code>echo 'print "Hello"' > hello.py</code></p>
-					<p><code>zvsh --zvm-image python.tar python @hello.py</code></p>
+					<pre>
+                                          wget http://packages.zerovm.org/zerovm-samples/python.tar
+                                          echo 'print "Hello"' > hello.py
+                                          zvsh --zvm-image python.tar python @hello.py
+                                        </pre>
 					<!--
 					<p>Busybox</p>
-					<p><code>wget http://packages.zerovm.org/apt/ubuntu/samples/busybox</code></p>
-					<p><code>zvsh busybox ls -al /dev</code></p>
+					<pre>
+                                          wget http://packages.zerovm.org/apt/ubuntu/samples/busybox
+					  zvsh busybox ls -al /dev
+                                        </pre>
 					<p>PCRE grep</p>
-					<p><code>wget http://packages.zerovm.org/apt/ubuntu/samples/pcregrep</code></p>
-					<p><code>echo "a test" | zvsh pcregrep --color=always -i test</code></p>
+					<pre>
+                                          wget http://packages.zerovm.org/apt/ubuntu/samples/pcregrep
+					  echo "a test" | zvsh pcregrep --color=always -i test
+                                        </pre>
 					-->
 					<hr />
 
 					<h4>Install development tools</h4>
 					<p>Install ZeroVM debug/development tools:</p>
-					<!-- <p><code>sudo apt-get install zerovm-dbg</code></p> -->
-					 <p><code>sudo apt-get install zerovm-dev</code></p>
+					<!-- <pre>sudo apt-get install zerovm-dbg</pre> -->
+					<pre>sudo apt-get install zerovm-dev</pre>
 					<p>Install ZeroVM GCC toolchain:</p>
-					<p><code>sudo apt-get install gcc-4.4.3-zerovm</code></p>
+					<pre>sudo apt-get install gcc-4.4.3-zerovm</pre>
 					<p>Install some build tools:</p>
-					<p><code>sudo apt-get install make automake autoconf git</code></p>
+					<pre>sudo apt-get install make automake autoconf git</pre>
 					<!--
 					<p>Install ZeroVM debugger (not for the faint of heart):</p>
-					<p><code>sudo apt-get install gdb-zerovm</code></p>
+					<pre>sudo apt-get install gdb-zerovm</pre>
 					-->
 					<p>Now you can build some sample programs:</p>
-					<p><code>git clone https://github.com/zerovm/zerovm-samples</code></p>
-					<p><code>cd zerovm-samples</code></p>
-					<p><code>make</code></p>
+					<pre>
+                                          git clone https://github.com/zerovm/zerovm-samples
+					  cd zerovm-samples
+					  make
+                                        </pre>
 
 					<p>Or you can see how to port some existing software to ZeroVM:</p>
-					<p><code>git clone https://github.com/zerovm/zerovm-ports</code></p>
-					<p><code>cd zlib</code></p>
-					<p><code>cat README.md</code></p>
+					<pre>
+                                          git clone https://github.com/zerovm/zerovm-ports
+					  cd zlib
+					  cat README.md
+                                        </pre>
 					<hr />
 
 					<h3>GitHub Links</h3>
