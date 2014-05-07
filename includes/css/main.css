@@ -224,6 +224,8 @@ section.container code, section.container pre {
 }
 
 section.container pre {
+	border: thin solid #c40022;
+	padding: 6px;
 	white-space: pre-line;
 }
 
