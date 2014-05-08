@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8" />
-	
+
 	<!-- Mobile Specific Metas
   ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
+
 	<title>ZeroVM sponsored by Rackspace</title>
 	<link rel="stylesheet" href="includes/css/main.css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	
+
 	<script src="includes/js/jquery-1.10.2.min.js"></script>
 	<script src="includes/js/plugins/waypoints.min.js"></script>
 	<script src="includes/js/plugins/waypoints-sticky.min.js"></script>
@@ -22,7 +22,7 @@
 
 </head>
 <body>
-	
+
 	<header class="clearfix">
 		<div class="nav-container">
 			<h1 class="logo"><a href="index.htm">ZeroVM</a></h1>
@@ -38,19 +38,26 @@
 	        </nav>
 		</div>
 	</header>
-	
+
 	<article>
 		<section class="container">
 			<div class="sixteen columns">
-				
+
 				<div class="row">
 					<div class="sixteen columns">
 						<h2>What is ZeroVM?</h2>
-						<p>ZeroVM is an open source, virtualization technology that is based on the Chromium Native Client (NaCl) project. ZeroVM creates a secure and isolated execution enviornment which can run a single thread or application. ZeroVM is designed to be lightweight, portable, and can easily be embedded inside of existing storage systems. This functionality allows developers to push their application to their data instead of having to pull their data to their application as is the case with more traditional architectures.</p>
+                        <p>ZeroVM is an open source virtualization technology
+that is based on the Chromium Native Client (NaCl) project. ZeroVM creates a
+secure and isolated execution enviornment which can run a single thread or
+application. ZeroVM is designed to be lightweight, portable, and can easily be
+embedded inside of existing storage systems. This functionality allows
+developers to push their application to their data instead of having to pull
+their data to their application, as is the case with more traditional
+architectures.</p>
 					</div>
 				</div>
 				<hr />
-				
+
 				<div class="row">
                      <div class="three columns aplha"> <p> </p> </div>
                      <div class="five columns ">
@@ -64,15 +71,35 @@
                     <div class="three columns omega"> <p> </p> </div>
 				</div>
 				<hr />
-                
+
                 <div class="row">
 					<div class="sixteen columns">
 						<h2>More Details</h2>
-                        <p>While ZeroVM itself provides only raw execution environment, the ZeroVM Run Time (ZRT) includes a port of glibc and an in memory filesytem providing a C99 compliant environment supporting most of the POSIX syscall API. ZeroVM doesn't expose any non C99 or non POSIX API. All ZeroVM magic is handled transparently to the application. In best POSIX/UNIX traditions all IO to and from ZeroVM is modeled as files. Input data is presented to application as STDIN, log as STDERR and output as STDOUT. Communication channels with peer ZeroVM instances are also presented as files. The rest of the visible file&#8211;system is all transient and memory&#8211;backed in current implementation. Standard C99 library and major part of POSIX is available, however, there are some behavioral deviations from what would be expected as "normal" implementation. For example, since ZeroVM is deterministic, time functions always return zero. We assume it is within C99 standard. It could be interpreted by the application as if it is running on an infinitely fast computer. Threading is cooperative (handled automatically) and deterministic, hence all thread synchronization primitives are just no&#8211;ops. Developing for ZeroVM requires using the provided cross&#8211;compilation GNU toolchain.</p>
+                        <p>
+While ZeroVM itself provides only raw execution environment, the <a
+href="https://github.com/zerovm/zrt">ZeroVM Run Time (ZRT)</a> includes a port
+of glibc and an in-memory file system. This provides a C99 compliant
+environment supporting most of the POSIX syscall API. ZeroVM doesn't expose
+any non C99 or non POSIX API. All ZeroVM magic is handled transparently to the
+application. True to POSIX/UNIX traditions, all IO to and from ZeroVM is
+modeled as files. Input data is presented to application as STDIN, log as
+STDERR and output as STDOUT. Communication channels with peer ZeroVM instances
+are also presented as files. The rest of the visible file system is all
+transient and memory-backed in the current implementation.  The standard C99
+library and a major part of POSIX are available; however, there are some
+behavioral deviations from what would be expected as a "normal" implementation.
+For example, since ZeroVM is deterministic, time functions always return zero.
+(We assume this is within the C99 standard.) This could be interpreted by the
+application as if it is running on an infinitely fast computer. Threading is
+cooperative (handled automatically) and deterministic, hence all thread
+synchronization primitives are NOPs. Developing applications for ZeroVM
+requires use of the provided cross-compilation GNU
+<a href="https://github.com/zerovm/toolchain">toolchain</a>.
+</p>
                     </div>
 				</div>
 				<hr />
-                
+
 				<div class="row">
                     <div class="eight columns alpha">
 						<center><p><a href="http://docs.zerovm.org">Detailed ZeroVM Documentation</a></p></center>
@@ -81,11 +108,11 @@
 						<center><p><a href="https://github.com/zerovm/"><i class="fa fa-github-alt"></i>Learn more at GitHub</a></p></center>
 					</div>
 				</div>
-							
+
 			</div>
 		</section>
 	</article>
-	
+
 	<footer>
 		<section class="container">
 			<div class="sixteen columns">
@@ -112,6 +139,6 @@
 			</div>
 		</section>
 	</footer>
-	
+
 	</body>
 </html>
