@@ -1,0 +1,27 @@
+<header class="clearfix {{ page.layout }}">
+  <div class="nav-container">
+    <h1 class="logo"><a href="/">ZeroVM</a></h1>
+    {% if page.layout == 'frontpage' %}
+      <p>~ Hyperscale Cloud Infrastructure ~</p>
+      <br />
+    {% endif %}
+    <a href="https://github.com/zerovm/" class="github">
+      <img src="/images/github-orange@2x.png" height="149" width="149" alt="Fork me on GitHub" />
+    </a>
+    <nav id="nav-global" class="clearfix">
+      <ul class="clearfix">
+        {% assign sorted_pages = site.pages | where: 'layout', 'sub-page' | sort: 'order' %}
+        {% for p in sorted_pages %}
+          <li>
+            <a href="{{ p.url }}" class="{% if p.url == page.url %} active {% endif %}">
+              {{ p.title }}
+            </a>
+          </li>
+        {% endfor %}
+        <li><a href="http://docs.zerovm.org">Documentation</a></li>
+        <li><a href="http://blog.zerovm.org">Blog</a></li>
+      </ul>
+      <a href="#" id="pull">Menu<i class="fa fa-bars"></i></a>
+    </nav>
+  </div>
+</header>
