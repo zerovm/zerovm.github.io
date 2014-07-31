@@ -1,6 +1,7 @@
 ---
 title: Download
 order: 40
+redirect_from: download.htm
 ---
 
 ## Download ZeroVM

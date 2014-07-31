@@ -1,5 +1,6 @@
 ---
 layout: frontpage
+redirect_from: index.htm
 ---
 
 ## What is ZeroVM?

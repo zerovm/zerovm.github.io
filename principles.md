@@ -1,6 +1,7 @@
 ---
 title: Principles
 order: 10
+redirect_from: principles.htm
 ---
 
 ## The Principles Behind ZeroVM

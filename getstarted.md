@@ -1,6 +1,7 @@
 ---
 title: Get Started
 order: 20
+redirect_from: getstarted.htm
 ---
 
 ## Getting Started with ZeroVM

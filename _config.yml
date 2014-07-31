@@ -4,3 +4,5 @@ defaults:
       type: page
     values:
       layout: sub-page
+gems:
+  - jekyll-redirect-from

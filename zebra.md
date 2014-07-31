@@ -1,6 +1,7 @@
 ---
 title: Zebra
 order: 30
+redirect_from: zebra.htm
 ---
 
 <div class="four columns omega" style="float: right">
