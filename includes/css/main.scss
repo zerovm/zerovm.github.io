@@ -140,10 +140,10 @@ header.sub-page h1 a {
     background-image: none, url("../../images/logo-zerovm-small.svg");
     background-repeat: no-repeat;
     background-position: 19px 20px;
-}
 
-header.sub-page h1 a:hover {
-    border-color: #ef7600;
+    &:hover {
+        border-color: #ef7600;
+    }
 }
 
 header {
@@ -325,18 +325,16 @@ span.download {
 
 footer {
     background: #8d9eb0;
-    section.container {
-        color: #fff;
-        .row {
-            margin: 30px 0;
-        }
-    }
     i {
         font-size: 250%;
         float: left;
         margin-right: 15px;
     }
     section.container {
+        color: #fff;
+        .row {
+            margin: 30px 0;
+        }
         h5 {
             font-family: $sans-bold;
         }
@@ -412,11 +410,6 @@ footer {
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     header {
         margin-bottom: 30px;
-    }
-    .container .row {
-        margin-bottom: 10px;
-    }
-    header {
         p {}
         nav#nav-global {
             padding: 10px 0 5px 0;
@@ -425,6 +418,9 @@ footer {
                 padding: 8px 13px;
             }
         }
+    }
+    .container .row {
+        margin-bottom: 10px;
     }
     section.container {
         h2 {
@@ -499,11 +495,6 @@ footer {
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     header {
         margin-bottom: 20px;
-    }
-    .container .row {
-        margin-bottom: 10px;
-    }
-    header {
         p {
             width: 250px;
             font-size: 14px;
@@ -521,6 +512,9 @@ footer {
                 float: left;
                 margin: 0;
                 width: 50%;
+                &:last-child a {
+                    border-right: 1px solid #eee;
+                }
             }
             a {
                 line-height: 16px;
@@ -531,9 +525,6 @@ footer {
                 padding: 15px 0 15px 15px;
                 text-decoration: none;
                 text-align: left;
-            }
-            li:last-child a {
-                border-right: 1px solid #eee;
             }
             a#pull {
                 display: block;
@@ -551,6 +542,9 @@ footer {
                 }
             }
         }
+    }
+    .container .row {
+        margin-bottom: 10px;
     }
     section.container {
         h2 {
@@ -607,15 +601,6 @@ footer {
         background-position: 13px 8px;
     }
     footer {
-        section.container .row {
-            margin: 20px 0;
-            .columns {
-                margin-bottom: 20px;
-            }
-            .columns:last-child {
-                margin-bottom: 0;
-            }
-        }
         i {
             font-size: 180%;
             float: left;
@@ -630,6 +615,15 @@ footer {
             }
             li {
                 margin-bottom: 0;
+            }
+            .row {
+                margin: 20px 0;
+                .columns {
+                    margin-bottom: 20px;
+                }
+                .columns:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
     }
