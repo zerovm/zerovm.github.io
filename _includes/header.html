@@ -12,11 +12,15 @@
       <ul class="clearfix">
         {% assign sorted_pages = site.pages | where: 'layout', 'sub-page' | sort: 'order' %}
         {% for p in sorted_pages %}
+          <!-- The redirect-from plugin creates title-less pages that
+               we want to exclude -->
+          {% if p.title != nil %}
           <li>
             <a href="{{ p.url }}" class="{% if p.url == page.url %} active {% endif %}">
               {{ p.title }}
             </a>
           </li>
+          {% endif %}
         {% endfor %}
         <li><a href="http://docs.zerovm.org">Documentation</a></li>
         <li><a href="http://blog.zerovm.org">Blog</a></li>
