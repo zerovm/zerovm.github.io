@@ -5,6 +5,17 @@
 @import url('fonts.css');
 @import url('skeleton.css');
 
+$font-fallbacks: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$sans-regular: 'SourceSansProRegular', $font-fallbacks;
+$sans-light: 'SourceSansProLight', $font-fallbacks;
+$sans-bold: 'SourceSansProBold', $font-fallbacks;
+
+$monospace: (Consolas, "Andale Mono WT", "Andale Mono",
+             "Lucida Console", "Lucida Sans Typewriter",
+             "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+             "Liberation Mono", "Nimbus Mono L",
+             Monaco, "Courier New", Courier, monospace);
+
 .clearfix:after {
     content: ".";
     display: block;
@@ -26,7 +37,7 @@
 html {
         height: 100%;
         background: #fff;
-        font-family:'SourceSansProRegular', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family:$sans-regular;
         -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
         -webkit-text-size-adjust: 100%;
 }
@@ -35,7 +46,7 @@ html {
      html {
                 height: 100%;
                 background: #fff;
-                font-family:'SourceSansProRegular', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-family:$sans-regular;
                 -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
                 -webkit-text-size-adjust: 100%;
      }
@@ -49,7 +60,7 @@ a {
         transition: all .15s linear;
 }
 
-strong {font-family:'SourceSansProBold', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+strong {font-family:$sans-bold;}
 em {font-style: italic;}
 
 ul {}
@@ -121,13 +132,13 @@ header {
         font-size: 18px;
         line-height: 22px;
         margin: 20px 0 30px 0;
-        font-family:'SourceSansProLight', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family:$sans-light;
         font-style: italic;
         display: inline-block;
         color: #fff;
 
         strong {
-            font-family:'SourceSansProRegular', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family:$sans-regular;
             letter-spacing: -1px;
         }
     }
@@ -142,7 +153,7 @@ header {
     }
 
     nav#nav-global {
-        font-family:'SourceSansProLight', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family:$sans-light;
         margin: 0;
         padding: 0;
         background: #fff;
@@ -182,14 +193,14 @@ section.container {
     margin-bottom: 20px;
 
     h2 {
-        font-family:'SourceSansProBold', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family:$sans-bold;
         font-size: 28px;
         margin-bottom: 15px;
         color: #8d9eb0;
     }
 
     h3 {
-        font-family:'SourceSansProBold', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family:$sans-bold;
         font-size: 22px;
         line-height: 22px;
         margin-bottom: 15px;
@@ -197,7 +208,7 @@ section.container {
     }
 
     h4 {
-        font-family:'SourceSansProBold', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family:$sans-bold;
         font-size: 18px;
         line-height: 18px;
         margin-bottom: 15px;
@@ -205,14 +216,14 @@ section.container {
     }
 
     p {
-        font-family:'SourceSansProLight', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family:$sans-light;
         font-size: 16px;
         line-height: 22px;
         margin-bottom: 15px;
     }
 
     a {
-        font-family:'SourceSansProRegular', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family:$sans-regular;
         color: #ef7600;
         text-decoration: none;
     }
@@ -224,7 +235,7 @@ section.container {
     strong {color: #888;}
 
     code, pre {
-        font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+        font-family: $monospace;
         color: #c40022;
         background: #ffe8e9;
         font-size: 14px;
@@ -314,7 +325,7 @@ footer {
     }
 
     section.container {
-        h5 {font-family:'SourceSansProBold', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+        h5 {font-family:$sans-bold;}
         p {white-space: nowrap; margin-bottom: 0;}
 
         a {
@@ -327,7 +338,7 @@ footer {
         ul {margin-bottom: 0;}
 
         li {
-            font-family:'SourceSansProLight', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family:$sans-light;
             display: inline-block;
             list-style: none;
             margin-right: 5px;
@@ -504,7 +515,7 @@ footer {
 
                 a#pull {
                     display: block;
-                    font-family:'SourceSansProBold', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                    font-family:$sans-bold;
                     padding: 10px 0 10px 15px;
                     /*          border-top: 1px solid #eee;*/
                     color: #8d9eb0;
