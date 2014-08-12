@@ -17,10 +17,9 @@ ZeroVM is extremely small, lightweight, and fast. An execution
 environment can start in as little as 5 milliseconds. By eliminating
 the operating system and only providing enough functionality to run
 simple applications, ZeroVM allows the creation of new execution
-environments for each user/request. Traditional hypervisors also
-create ongoing overhead by inserting themselves between the virtual
-machine and the hardware. ZeroVM can pre-validate executables
-resulting in little to no overhead at runtime.
+environments for each user/request. ZeroVM statically pre-validates
+executables, which means there is no interpretation and thus no execution
+overhead (apart from the validation).
 
 ### Secure
 
