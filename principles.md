@@ -28,7 +28,7 @@ environment. The security is derived from the Chromium Native Client
 (NaCl) project and is based on the concept of software fault
 isolation. ZeroVM creates a secure sandbox and validates all code that
 is executed inside the sandbox, ensuring a program will not
-accidentaly or malicously break out. This level of security allows for
+accidentally or maliciously break out. This level of security allows for
 the execution of arbitrary user code even in untrusted multi-tenant
 environments like public cloud storage services. Find out more about
 about Native Client on the
