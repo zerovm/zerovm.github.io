@@ -1,7 +1,10 @@
 ---
 title: Zebra
 order: 30
-redirect_from: zebra.htm
+redirect_from:
+  - zebra.htm
+  - zebra.html
+
 ---
 
 <div class="four columns omega" style="float: right">
@@ -21,27 +24,9 @@ object data over the network to separate compute nodes. This also means that a
 storage cluster can leverage spare compute cycles, where they would otherwise
 be wasted.
 
-## The Zebra Playground
 
-### What is Zebra?
+To get started using ZeroCloud, check out the
+[documentation](https://zerovm.readthedocs.org/en/latest/zerocloud/overview.html)
 
-[Zebra](https://zebra.zerovm.org) is a ZeroCloud beta-testing service
-provided by Rackspace to the ZeroVM community. Zebra provides a place
-to experiment with ZeroVM, and to test new features and functionality
-at scale to help accelerate development.
-
-### Getting Access to Zebra
-
-Access to Zebra is currently by invitation only, with intention of
-opening it to the public in the near future. If you're interested
-getting early access, you can
-[request an invitation code](https://zebra.zerovm.org/register.html).
-
-### Using Zebra
-
-To get started using Zebra, check out the
-[documentation](https://zerovm.readthedocs.org/en/latest/zebra/zebra.html)
-and
-[tutorials](https://zerovm.readthedocs.org/en/latest/zebra/tutorial.html).
 If you get stuck, feel free to
 [contact us](https://zerovm.readthedocs.org/contact.html).
