@@ -50,7 +50,7 @@ graph.
 
 ZeroVM is designed to be embedded into existing storage systems. By
 embedding ZeroVM inside an existing storage system, for example, you
-can push your applicaiton to your data and run computations in situ,
+can push your application to your data and run computations in situ,
 rather than paying the latency cost of piping data from storage to
 compute nodes. This can provide functionality equivalent to stored
 procedures for a variety of different storage systems. An example of
