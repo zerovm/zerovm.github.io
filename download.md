@@ -6,30 +6,65 @@ redirect_from: download.htm
 
 ## Download ZeroVM
 
-ZeroVM is free to download, use, and extend. Browse our
-[Git](https://github.com/zerovm/) repositories to find source code,
-command-line utilities, and run-time libraries. Plenty of sample code
-and examples for porting your project to ZeroVM are available as well.
-Want to give back to the project, great! Contact us and and tell us
-about your pull request.
+ZeroVM software is free to download, use, and extend. All code is licensed
+under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+
+Full documentation and tutorials are available on
+[docs.zerovm.org](http://docs.zerovm.org/), hosted by
+[Read the Docs](https://readthedocs.org/).
 
 ---
 
-### Installation
+### Install ZeroCloud
+
+ZeroCloud is a converged cloud storage and computation platform built on
+[OpenStack Swift](http://swift.openstack.org/).
+
+The easiest way to get up and running with ZeroCloud is to use the Vagrant
+appliance we provide in the
+[ZeroCloud repository](https://github.com/zerovm/zerocloud). The appliance
+contains a minimal
+[DevStack-based](http://docs.openstack.org/developer/devstack/) installation
+of OpenStack Swift, ZeroCloud middleware for Swift, and the ZeroVM core.
+
+To set it up:
+
+1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
+
+2. Install [Vagrant](http://www.vagrantup.com/downloads.html).
+
+3. Instal [Git](http://git-scm.com).
+
+4. Clone the ZeroCloud repository:
+
+    git clone https://github.com/zerovm/zerocloud
+
+5. Start the Vagrant appliance:
+
+    cd zerocloud/contrib/vagrant
+    vagrant up
+
+With a good internet connection, this will take about 10 minutes to set up.
+
+See [docs.zerovm.org](http://docs.zerovm.org) for further information and
+tutorials.
+
+---
+
+### Install ZeroVM
+
+If you just want to use the core ZeroVM application sandbox (without ZeroCloud
+or OpenStack Swift), below you will find instructions for installing and
+running the software.
 
 Binary packages are for Ubuntu 12.04 LTS 64-bit only.
 
 ---
 
-#### Install apt-get repository:
+#### Add Launchpad PPA
 
-Add a new source to **sources.list**:
-
-    sudo su -c 'echo "deb http://packages.zerovm.org/apt/ubuntu/ precise main" > /etc/apt/sources.list.d/zerovm-precise.list'
-
-Install zerovm GPG key:
-
-    wget -O- http://packages.zerovm.org/apt/ubuntu/zerovm.pkg.key | sudo apt-key add -
+    sudo apt-get install python-software-properties
+    sudo add-apt-repository ppa:zerovm-ci/zerovm-latest
 
 Update packages:
 
@@ -53,39 +88,39 @@ Install ZeroVM command-line shell:
 
 Python 2.7
 
-
-    wget http://packages.zerovm.org/zerovm-samples/python.tar
+    wget http://ci.zerovm.org/latest-packages/zpython2.7.3.tar
     echo 'print "Hello"' > hello.py
-    zvsh --zvm-image python.tar python @hello.py
+    zvsh --zvm-image zpython2.7.3.tar python @hello.py
 
 ---
 
 #### Install development tools
 
-Install ZeroVM debug/development tools:
+If you want to write applications for the ZeroVM platform in C, there is a
+modified gcc toolchain for this purpose.
 
-    sudo apt-get install zerovm-dev
+The best way to install the ZeroVM toolchain is to use the Vagrant appliance
+we provide in the
+[toolchain repository](https://github.com/zerovm/toolchain).
 
-Install ZeroVM GCC toolchain:
+To set it up:
 
-    sudo apt-get install gcc-4.4.3-zerovm
+1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
-Install some build tools:
+2. Install [Vagrant](http://www.vagrantup.com/downloads.html).
 
-    sudo apt-get install make automake autoconf git
+3. Instal [Git](http://git-scm.com).
 
-Now you can build some sample programs:
+4. Clone the toolchain repository:
 
-    git clone https://github.com/zerovm/zerovm-samples
-    cd zerovm-samples
-    make
+    git clone https://github.com/zerovm/toolchain
 
-Or you can see how to port some existing software to ZeroVM:
+5. Start the Vagrant appliance:
 
-    git clone https://github.com/zerovm/zerovm-ports
-    cd zlib
-    cat README.md
+    cd toolchain/contrib/vagrant
+    vagrant up
 
+The full toolchain will take about 25-30 minutes to compile.
 ---
 
 ### GitHub Links
@@ -95,6 +130,7 @@ will rander the page incorrectly -->
 
 * [<i class="fa fa-github-alt"> </i>Source code](https://github.com/zerovm/zerovm)
 * [<i class="fa fa-github-alt"> </i>Command&#8211;line tools](https://github.com/zerovm/zerovm-cli)
+* [<i class="fa fa-github-alt"> </i>ZeroVM Package Manager (zpm)](https://github.com/zerovm/zpm)
 * [<i class="fa fa-github-alt"> </i>Run&#8211;time library](https://github.com/zerovm/zrt)
 * [<i class="fa fa-github-alt"> </i>GCC toolchain](https://github.com/zerovm/toolchain)
   (Installation: [README.md](https://github.com/zerovm/toolchain/blob/master/README.md))
