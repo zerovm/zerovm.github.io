@@ -30,19 +30,16 @@ of OpenStack Swift, ZeroCloud middleware for Swift, and the ZeroVM core.
 To set it up:
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
-
 2. Install [Vagrant](http://www.vagrantup.com/downloads.html).
-
-3. Instal [Git](http://git-scm.com).
-
+3. Install [Git](http://git-scm.com).
 4. Clone the ZeroCloud repository:
 
-    git clone https://github.com/zerovm/zerocloud
+        git clone https://github.com/zerovm/zerocloud
 
 5. Start the Vagrant appliance:
 
-    cd zerocloud/contrib/vagrant
-    vagrant up
+        cd zerocloud/contrib/vagrant
+        vagrant up
 
 With a good internet connection, this will take about 10 minutes to set up.
 
@@ -106,19 +103,16 @@ we provide in the
 To set it up:
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
-
 2. Install [Vagrant](http://www.vagrantup.com/downloads.html).
-
 3. Instal [Git](http://git-scm.com).
-
 4. Clone the toolchain repository:
 
-    git clone https://github.com/zerovm/toolchain
+        git clone https://github.com/zerovm/toolchain
 
 5. Start the Vagrant appliance:
 
-    cd toolchain/contrib/vagrant
-    vagrant up
+        cd toolchain/contrib/vagrant
+        vagrant up
 
 The full toolchain will take about 25-30 minutes to compile.
 ---
