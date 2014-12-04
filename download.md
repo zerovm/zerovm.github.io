@@ -123,11 +123,11 @@ The full toolchain will take about 25-30 minutes to compile.
 <!-- the whitespace in the i elements is important, without it, Jekyll
 will render the page incorrectly -->
 
-* [<i class="fa fa-github-alt octocatlist"> </i>Source code](https://github.com/zerovm/zerovm)
-* [<i class="fa fa-github-alt octocatlist"> </i>Command&#8211;line tools](https://github.com/zerovm/zerovm-cli)
-* [<i class="fa fa-github-alt octocatlist"> </i>ZeroVM Package Manager (zpm)](https://github.com/zerovm/zpm)
-* [<i class="fa fa-github-alt octocatlist"> </i>Run&#8211;time library](https://github.com/zerovm/zrt)
-* [<i class="fa fa-github-alt octocatlist"> </i>GCC toolchain](https://github.com/zerovm/toolchain)
+* [Source code](https://github.com/zerovm/zerovm)
+* [Command&#8211;line tools](https://github.com/zerovm/zerovm-cli)
+* [ZeroVM Package Manager (zpm)](https://github.com/zerovm/zpm)
+* [Run&#8211;time library](https://github.com/zerovm/zrt)
+* [GCC toolchain](https://github.com/zerovm/toolchain)
   (Installation: [README.md](https://github.com/zerovm/toolchain/blob/master/README.md))
-* [<i class="fa fa-github-alt octocatlist"> </i>Sample code &amp; libraries](https://github.com/zerovm/zerovm-samples)
-* [<i class="fa fa-github-alt octocatlist"> </i>Sample software &amp; libraries ported to ZeroVM ](https://github.com/zerovm/zerovm-ports)
+* [Sample code &amp; libraries](https://github.com/zerovm/zerovm-samples)
+* [Sample software &amp; libraries ported to ZeroVM ](https://github.com/zerovm/zerovm-ports)
