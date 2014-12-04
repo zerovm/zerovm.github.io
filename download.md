@@ -115,12 +115,13 @@ To set it up:
         vagrant up
 
 The full toolchain will take about 25-30 minutes to compile.
+
 ---
 
 ### GitHub Links
 
 <!-- the whitespace in the i elements is important, without it, Jekyll
-will rander the page incorrectly -->
+will render the page incorrectly -->
 
 * [<i class="fa fa-github-alt octocatlist"> </i>Source code](https://github.com/zerovm/zerovm)
 * [<i class="fa fa-github-alt octocatlist"> </i>Command&#8211;line tools](https://github.com/zerovm/zerovm-cli)
